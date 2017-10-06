@@ -1,0 +1,13 @@
+City,Residential,Commercial,Educational,CBA,City.Review,Region.State,Industrial.Impact,Industrial.Support
+Los Angeles,0,0,0,1,1,0,1,0
+Chicago,1,0,0,0,1,0,1,0
+San Diego,0,0,0,0,1,0,1,0
+Jacksonville,1,1,0,0,0,0,0,0
+San Francisco,1,1,0,0,0,0,0,0
+Boston,0,0,0,0,0,1,1,0
+Seattle,1,0,1,0,0,0,0,0
+Baltimore,1,1,1,0,1,1,1,0
+Portland,1,1,0,0,0,0,0,0
+Minneapolis,0,0,0,0,1,1,0,0
+New York,0,0,0,0,1,0,0,1
+San Jose,0,0,0,0,1,0,1,0

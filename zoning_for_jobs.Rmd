@@ -1,0 +1,159 @@
+---
+title: "Zoning For Jobs: Industrial Land-Use Policy\n in the nation's largest cities"
+author: "Jamaal Green"
+date: "October 4, 2017"
+output: 
+  beamer_presentation:
+    incremental: TRUE
+    theme:  "Boadilla"
+    slide_level:  2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE, tidy = FALSE)
+
+if(!require(pacman)){install.packages("pacman"); library(pacman)}
+p_load(readr, tidyr, dplyr, ggplot2)
+```
+
+#Introduction and Background
+
+##Uneven and Unequal Growth
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+```
+
+- Many cities continue to grow steadily...
+- BUT...the benefits of growth are ever more unequally distributed
+- Housing gets (necessary) attention but inequality is also reflected in the labor market
+
+##Good Jobs
+
+- Many labor markets have recovered and are growing
+- BUT...the *quality* of jobs available for workers of different educational backgrounds diverges
+- Workers w/out degrees face flat wages, paltry benefits and few, if any, opportunities for advancement
+
+##It's the Industry...
+
+Absent major changes to labor market (Fight for $15!) planners are looking at *industrial* strategies
+
+##Manufacturing Jobs are Still Good Jobs (mainly)
+
+> - Mfg. workers w/out college degree still earn more (though narrowing) than non-mfg. workers
+> - Mfg workers w/out college degree have access to better benefits than non-mfg workers
+
+##Manufacturing is Urban
+
+- The vast majority of mfg employment is in large metropolitan areas
+- Demands for "advanced manufacturing" require extensive cooperation between producing and testing
+- Consumer goods (particularly food) benefit from proximity to customers
+
+##"Smart Growth's Blindside"
+
+Planning for the past 30 years has focused on converting industrial land (and workers)
+
+> - Industrial work is disappearing/obsolete
+> - Industrial work/land is seen as dirty or non-sustainable
+> - Industrial land is a relative fiscal loser 
+> - People just prefer "mixed use"
+
+##Protecting Industrial Land
+
+Many cities realize industrial land is an *asset* and should be protected from conversion...but what cities are actually protecting their industrial land and how are they doing so?
+
+#Methods
+
+##Sample Cities
+
+Reviewed the zoning codes and most recent comp plans of the nation's 50 largest cities (based on 2012 population)
+
+##Code Identification
+
+> - Distinct and protective- a *distinct* code from existing zoning or land designation and includes some stronger set of protections or rules
+> - Industrial land as asset- the language of the code frames industrial land as an asset and not as a nuisance
+
+##Who Protects Their Industrial Land
+
+| City          | State | Population, 2012 | Year Ordinance Passed |
+|:---------------|:-----:| ----------------:| ---------------------:|
+| Los Angeles   |   CA  |     3,857,799    |          2008         |
+| Chicago       |   IL  |     2,714,856    |          1988         |
+| San Diego     |   CA  |     1,338,348    |          2008         |
+| Jacksonville  |   FL  |      836,507     |          2007         |
+| San Francisco |   CA  |      825,863     |          2008         |
+| Boston        |   MA  |      636,479     |          1978         |
+| Seattle       |   WA  |      634,535     |          2002         |
+| Baltimore     |   MD  |      621,342     |          2004         |
+| Portland      |   OR  |      603,106     |          1988         |
+| San Jose      |   CA  |      982,765     |          2007         |
+| Minneapolis   |   MN  |      392,880     |          2009         |
+| New York      |   NY  |     8,199,221    |          2006         |
+
+##Use vs. Process
+
+Most cities focus on either restricting use directly (stricter zoning) or increasing process requirements (comp plan overlays). 
+
+
+##Cities Use Combination of Restrictions and Process
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+land_matrix <- read_csv("policy_matrix.csv")
+
+land_long <- gather(land_matrix, key = "Policy", value = "Restriction", 2:9)
+
+land_long$Policy <- factor(land_long$Policy, levels = c("Residential", "Commercial", "Educational", 
+                                                        "City.Review", "Region.State",
+                                                        "Industrial.Impact", "CBA", "Industrial.Support"))
+
+p1 <- ggplot(land_long, aes(x = City, y = Policy, fill = factor(Restriction))) + geom_tile() + scale_fill_manual(values = c("white", "blue" )) + coord_flip() + theme(axis.text.x  = element_text(angle = 45, hjust = 1))
+
+p2 <- ggplot(land_long, aes(x = City, y = Policy, fill = Restriction)) + geom_tile(color = "white") + 
+  scale_fill_gradient(low = "white", high = "steelblue") + coord_flip() + 
+  theme(axis.text.x  = element_text(angle = 45, hjust = 1, face = "bold", size = 14),
+        axis.text.y = element_text(face = "bold", size = 14),
+        axis.title.x = element_text(size = 16),
+        axis.title.y = element_text(size = 16),
+        legend.position = "none") 
+
+p2
+```
+
+##Baltimore Maritime Industrial Districts
+
+> - New zoning code
+> - Passed in 2004 and strongest of the policies
+> - Outright forbids nearly any non-industrial marine uses 
+> - Rezoning applications require support of surrounding land owners, the city planning department, state port authority must be informed and give guidance
+
+##Los Angeles Employment Protection Districts
+
+> - A comprehensive plan overlay
+> - Passed in 2008 after extensive industrial land use research period
+> - Staff directed to reject residential rezones and to develop supportive policy
+> - Industrial impact statements are required and notice to surrounding property owners
+> - In less intensive zones, industrial conversion requires community benefits including relocation assistance and job training
+
+##New York Industrial Business Zones
+
+> - Local community-economic development organizations oversee them
+> - Primarily zones for subsidy delivery including: tax relocation credits, job training credits, and small business support provided by the IBZ supervisor
+> - Verbal statement from the Mayor to prevent residential conversion and hotel encroachment
+> - Ongoing battle to include real restrictions in the city zoning code
+
+#Conclusions
+
+##Cities Care About Industrial Land
+
+- Nearly a quarter of the nation's largest cities have some form of industrial land preservation policy
+- Most of these policies are *new* and in flux
+- These policies are *variable* ranging from outright bans to no net-loss strategies to verbal committments from city power structures
+- The policies are primarily regulatory in nature and do not proactively support industrial users
+- Indicative of a burgeoning set of industrial land *strategies* and links job creation more directly land-use
+
+##Next Steps
+
+- To what extent are these policies effective in protecting (and even growing) industrial jobs?
+- What is the role of the planner in cities where these protections are in place? Do we see adequate enforcement? Are these policies reflective of actual city priorities and goals? 
+
+
