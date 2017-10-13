@@ -1,7 +1,7 @@
 ---
-title: "Zoning For Jobs: Industrial Land-Use Policy\n in the nation's largest cities"
+title: "Zoning For Jobs: Industrial Land-Use Preservation\n in the nation's largest cities"
 author: "Jamaal Green"
-date: "October 4, 2017"
+date: "October 9, 2017"
 output: 
   beamer_presentation:
     incremental: TRUE
@@ -16,61 +16,52 @@ if(!require(pacman)){install.packages("pacman"); library(pacman)}
 p_load(readr, tidyr, dplyr, ggplot2)
 ```
 
-#Introduction and Background
+#Introduction
 
-##Uneven and Unequal Growth
-```{r, message=FALSE, warning=FALSE, include=FALSE}
-library(knitr)
-```
+##Some Observations
 
-- Many cities continue to grow steadily...
-- BUT...the benefits of growth are ever more unequally distributed
-- Housing gets (necessary) attention but inequality is also reflected in the labor market
+- Many urban labor markets are recovering/have recovered from the Great Recession
+- This growth has not translated to greater wages for lesser skilled workers
+- This growth is placing generational levels of demand on relatively centrally located land
 
-##Good Jobs
+##So What?
 
-- Many labor markets have recovered and are growing
-- BUT...the *quality* of jobs available for workers of different educational backgrounds diverges
-- Workers w/out degrees face flat wages, paltry benefits and few, if any, opportunities for advancement
+- Absent direct regulatory steps (increasing min. wage, mandating paid leave) planners are left with human capital (skills upgrading etc.) or *industrial* strategies
+- Industrial jobs remain, on average, better jobs for workers with less formal education than equivalent service jobs therefore planners should work on supporting/growing such jobs
+- Growing industrial jobs requires planners to make or *preserve* space for industrial users
 
-##It's the Industry...
 
-Absent major changes to labor market (Fight for $15!) planners are looking at *industrial* strategies
+##Industrial Land Matters (again)
 
-##Manufacturing Jobs are Still Good Jobs (mainly)
+- Leigh and Hoelzel (2012)
+    + "Smart Growth's Blindside"...planning practice for the past 30 years has been one of explicitly chasing industrial users out of the city
+- Chapple (2014)
+    + Available industrial land encourages job growth
+- Lester, Kaza, Kirk (2013)
+    + Converting industrial land to non-industrial has mixed labor market outcomes we should consider
+- Leigh et al (2014)
+    + PAS *Sustainable Urban Industrial Development*
 
-> - Mfg. workers w/out college degree still earn more (though narrowing) than non-mfg. workers
-> - Mfg workers w/out college degree have access to better benefits than non-mfg workers
+##But...
 
-##Manufacturing is Urban
-
-- The vast majority of mfg employment is in large metropolitan areas
-- Demands for "advanced manufacturing" require extensive cooperation between producing and testing
-- Consumer goods (particularly food) benefit from proximity to customers
-
-##"Smart Growth's Blindside"
-
-Planning for the past 30 years has focused on converting industrial land (and workers)
-
-> - Industrial work is disappearing/obsolete
-> - Industrial work/land is seen as dirty or non-sustainable
-> - Industrial land is a relative fiscal loser 
-> - People just prefer "mixed use"
-
-##Protecting Industrial Land
-
-Many cities realize industrial land is an *asset* and should be protected from conversion...but what cities are actually protecting their industrial land and how are they doing so?
+What cities are protecting industrial land? What policies/techniques are they using? 
 
 #Methods
 
-##Sample Cities
+##My approach...
 
-Reviewed the zoning codes and most recent comp plans of the nation's 50 largest cities (based on 2012 population)
+Content analysis of the zoning codes and most recent comp plans of the nation's 50 largest cities
 
-##Code Identification
+##Identifying the Codes
 
-> - Distinct and protective- a *distinct* code from existing zoning or land designation and includes some stronger set of protections or rules
-> - Industrial land as asset- the language of the code frames industrial land as an asset and not as a nuisance
+> - Discursive
+  + Frames industrial land as an asset and not as a nuisance to be manage
+> - Functional
+  + Distinct and protective- a unique code/layer that adds some form of additional protection and coding what the additional restrictions are (with particular focus on increased residential and commercial restrictions)
+
+##Baltimore's Marine Industrial Districts
+
+"THE MI MARITIME INDUSTRIAL ZONING DISTRICT IS INTENDED TO ENSURE THE PRESERVATION OF LIMITED DEEP-WATER FRONTAGE OF THE PORT OF BALTIMORE FOR MARITIME USE BY DELINEATING AN AREA WHERE MARITIME SHIPPING CAN BE CONDUCTED WITHOUT THE INTRUSION OF NON-INDUSTRIAL USES AND WHERE INVESTMENT IN MARITIME INFRASTRUCTURE IS ENCOURAGED"
 
 ##Who Protects Their Industrial Land
 
@@ -88,14 +79,6 @@ Reviewed the zoning codes and most recent comp plans of the nation's 50 largest 
 | San Jose      |   CA  |      982,765     |          2007         |
 | Minneapolis   |   MN  |      392,880     |          2009         |
 | New York      |   NY  |     8,199,221    |          2006         |
-
-##Use vs. Process
-
-> - Most cities use a hybrid policy system that uses both increased use restrictions through expanded zoning powers and greater process requirements often through comprehensive plan overlays
-> - This distinction is not entirely neat as overlays can also include greater use restrictions 
-
- 
-
 
 ##Cities Use Combination of Restrictions and Process
 
@@ -128,6 +111,7 @@ p2 <- ggplot(land_long, aes(x = reorder(City, PoliScore), y = Policy, fill = Res
 
 p2
 ```
+
 
 ##Baltimore Maritime Industrial Districts
 
@@ -165,5 +149,3 @@ p2
 
 - To what extent are these policies effective in protecting (and even growing) industrial jobs?
 - What is the role of the planner in cities where these protections are in place? Do we see adequate enforcement? Are these policies reflective of actual city priorities and goals? 
-
-

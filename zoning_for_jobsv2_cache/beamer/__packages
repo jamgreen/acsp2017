@@ -1,8 +1,7 @@
 base
 pacman
 readr
+tidyr
 dplyr
 ggplot2
-knitr
-tidyr
 bindrcpp
